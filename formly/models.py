@@ -229,7 +229,6 @@ class Field(models.Model):
     #             )
     
     def save(self, *args, **kwargs):
-        self.full_clean()
         if not self.pk and self.page is not None:
             self.ordinal = (self.page.fields.aggregate(
                 Max("ordinal")
