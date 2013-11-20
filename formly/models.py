@@ -211,7 +211,7 @@ class Field(models.Model):
     
     survey = models.ForeignKey(Survey, related_name="fields")  # Denorm
     page = models.ForeignKey(Page, null=True, blank=True, related_name="fields")
-    label = models.CharField(max_length=100)
+    label = models.CharField(max_length=255)
     field_type = models.IntegerField(choices=FIELD_TYPE_CHOICES)
     help_text = models.CharField(max_length=255, blank=True)
     ordinal = models.IntegerField()
